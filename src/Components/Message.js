@@ -2,22 +2,21 @@
 
 export const Message = (props) =>
 {
-
+    const { firstName, lastName, userName, email, password, dropDown, siteW, radioBtn, isChecked } = props.PassData
 
     return(
         <div>
-            {props.passFName !== "Login failed!" ?  <h3>Status:<br></br>
-                {props.passFName}<br></br>
-                {props.passLName}<br></br>
-                {props.passUName}<br></br>
-                {props.passEmail}<br></br>
-                {props.passPassword}<br></br>
-                {props.passDropDown}<br></br>
-                {props.PassSite}<br></br>
-                {props.PassGender}</h3> : <h3>Status:<br></br>
-                                        {props.passFName}</h3>}
-                                        
-            
+            {props.PassData === "Login failed!" ? 
+            <h3>Login failed!</h3> :
+            <h3>{firstName}<br></br>
+                {lastName}<br></br>
+                {userName}<br></br>
+                {email}<br></br>
+                {password}<br></br>
+                {dropDown}<br></br>
+                {siteW}<br></br>
+                {radioBtn}<br></br>
+                {isChecked}<br></br></h3>}
         </div>
     )
 }
