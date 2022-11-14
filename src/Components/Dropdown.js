@@ -3,15 +3,12 @@ import { useState } from "react"
 export const Dropdown = (props) =>
 {
 
-    const [selection, setSelection] = useState("")
+    const jobRoles = props.jobRole
 
     return (
-        <div>
-            <select value={props.DropDown({selection})} onChange={(e) => setSelection(e.target.value)}>
-                <option >Grapefruit</option>
-                <option >Lime</option>
-                <option >Coconut</option>
-                <option >Mango</option>
+        <div >
+            <select className="dropDown" defaultValue="" onChange={(event) => props.selectJob(event.target.value)}>
+                {jobRoles.map((role,index) => <option key={index}>{role}</option>)}
             </select>
             
         </div>
